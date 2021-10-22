@@ -1,0 +1,11 @@
+1)Create cv-Application repo on github 
+2)Create UI for the General info 
+3)Add functionality for UI 
+
+
+How things will work? 
+    User will start at form where he/she will enter general info. 
+    When user submits the form. The form will be hidden and new component -similar to A4 size page 
+    - will display all the info
+    User will have two button one to download the page in pdf form and other button to reset the whole thing. 
+     
