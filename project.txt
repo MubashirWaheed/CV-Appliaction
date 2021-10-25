@@ -1,5 +1,7 @@
 1)Create cv-Application repo on github 
 2)Create UI for the General info 
+    background light blue color
+    create form cards with sideline
 3)Add functionality for UI 
 
 
@@ -9,3 +11,5 @@ How things will work?
     - will display all the info
     User will have two button one to download the page in pdf form and other button to reset the whole thing. 
      
+Update on how things will actually work
+    

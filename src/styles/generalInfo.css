@@ -1,3 +1,38 @@
-.input-text {
-  background-color: gainsboro;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+.flex {
+  display: flex;
+  align-items: center;
+}
+.main {
+  width: 100%;
+  display: flex;
+  margin: 20px 0px 0px 0px;
+  padding-left: 30px;
+}
+.row {
+  display: flex;
+}
+input[type="text"],
+input[type="email"],
+input[type="number"] {
+  background-color: #d3d3d3;
+  height: 25px;
+  font-family: "poppins", sans-serif;
+  font-size: 15px;
+  width: 200px;
+  display: inline-block;
+}
+label {
+  margin-right: 10px;
+  display: inline-block;
+}
+/* .name {
+  margin: 0px 0px 0px 30px;
+} */
+.email {
+  margin: 0px 0px 0px 50px;
 }
