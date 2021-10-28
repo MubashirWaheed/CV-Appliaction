@@ -12,7 +12,7 @@
   align-items: center;
   flex-direction: column;
 }
-form {
+.main {
   width: 95%;
   height: 80vh;
   display: flex;
@@ -24,13 +24,11 @@ form {
 
 .background-card {
   background-color: white;
-  /* width: 60%; */
   position: relative;
   border-radius: 7px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* width: 70%; */
   height: 100%;
 }
 .background-card::after {
@@ -42,7 +40,8 @@ form {
   border-top: 5px solid steelblue;
   border-radius: 10px;
 }
-h1 {
+.heading {
   font-family: "Poppins", sans-serif;
   font-weight: 300;
+  padding: 15px 10px 0px 10px;
 }

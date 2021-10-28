@@ -3,15 +3,15 @@ import GeneralInfo from './components/GeneralInfo';
 function App() {
   return (
     <div className="App">
-      {/* <GeneralInfo title="mubashir"/> */}
       <div className="background">
-        <form typeof="submit">
+        <div className="main">
           <div className="background-card">
-            <h1>Cv Generator</h1>
+            <h1 className="heading">Cv Generator</h1>
             <GeneralInfo />
           </div>
-        </form>
+        </div>
       </div>
+      {/* <h2>Hello</h2> */}
     </div>
   );
 }
