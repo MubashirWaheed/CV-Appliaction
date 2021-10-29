@@ -1,6 +1,7 @@
 import './App.css';
 import GeneralInfo from './components/GeneralInfo';
 import Education from './components/Education';
+import Personal from './components/Personal';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
             <h1 className="heading">Cv Generator</h1>
             <GeneralInfo />
             <Education />
+            <Personal />
           </div>
         </div>
       </div>

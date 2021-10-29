@@ -13,17 +13,17 @@ class Education extends Component{
                 <div className={educationStyles.row}>
                     <div className={`${educationStyles['flex-ver']}`}>
                         <label htmlFor="school-name">School Name</label>
-                        <input type="text" name="school" id="school-name" />
+                        <input type="text" name="school" id="school-name" placeholder="Enter school name"/>
                     </div>
                     <div className={`${educationStyles['flex-ver']}`}>
                         <label htmlFor="title">Degree title</label>
-                        <input type="text" name="title" id="title" />
+                        <input type="text" name="title" placeholder="Enter Degree title" id="title" />
                     </div>
                 </div>
                 <div className={educationStyles.row}>
                     <div>
                         <label htmlFor="year-complete">Year in which degree complteted</label>
-                        <input type="date" name="year-complete" id="complteDate" className={educationStyles.completeDate} />
+                        <input type="date" name="year-complete" id="complteDate"   className={educationStyles.completeDate} />
                     </div>
                 </div>
                 <div className={`${generalInfo['general-submit-btn']}`}>

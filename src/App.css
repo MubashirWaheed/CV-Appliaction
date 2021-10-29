@@ -14,7 +14,7 @@
 }
 .main {
   width: 95%;
-  height: 80vh;
+  /* height: 80vh; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,7 +29,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100%;
+  /* padding: ; */
+  margin: 75px 0px 100px 0px;
+  /* height: 100%; */
 }
 .background-card::after {
   content: "";
