@@ -27,10 +27,8 @@ class GeneralInfo extends Component{
                         <label htmlFor="last-name">Last Name <span className={generalInfo.red}>*</span></label>
                         <input type="text" name="last-name" id="last-name" placeholder="Enter last name" autoComplete="off" required/>
                     </div>
-                    
                 </div>
                 <div className={`${generalInfo.row} ${generalInfo.flex}`}>
-                    {/* ${generalInfo.email} */}
                     <div className={`${generalInfo['flex-ver']}`} >
                         <label htmlFor="name">Email <span className={generalInfo.red}>*</span></label>
                         <input type="email" name="email" id="email-input" placeholder="Enter email" spellCheck="false" autoComplete="off" required  />
