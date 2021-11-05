@@ -1,40 +1,14 @@
 import React, {Component} from "react"
 import generalInfo from "../styles/generalInfo.module.css"
+// import Cv from "./Cv"
 
 
 class GeneralInfo extends Component{
-    constructor(props){
-        super(props)
-        this.state = {
-            firstName: "",
-            lastName: "",
-            email: "",
-            telephone:""
-        }
-    }
-    handleFirstName = (event)=>{
-        this.setState({
-            firstName:event.target.value
-        })
-    }
-    handleLastName = (event)=>{
-        this.setState({
-            lastName: event.target.value
-        })
-    }
-    handleEmail = (event)=>{
-        this.setState({
-            email: event.target.value
-        })
-    }
-    handlePhone = (event)=>{
-        this.setState({
-            telephone:event.target.value
-        })
-    }
+    
     submitted = (event)=>{
         event.preventDefault();
-        console.log(this.state.value);
+        // make Inputs unslectable after submit
+        console.log(this.props.firstName);
     }
 
     render(){
@@ -45,27 +19,28 @@ class GeneralInfo extends Component{
                         <label htmlFor="name">First Name <span className={generalInfo.red}>*</span></label>
                         <input 
                             type="text" 
-                            name="name" 
+                            name="firstName" 
                             id="name"
-                            value={this.state.firstName} 
+                            value={this.props.firstName} 
                             placeholder="Enter first name" 
                             spellCheck="false" 
                             autoComplete="off" 
                             required="required"
-                            onChange={this.handleFirstName} />
+                            disabled
+                            onChange={this.props.handleChange} />
                     </div>
                     <div className={`${generalInfo['flex-ver']}`}>
                         <label htmlFor="last-name">Last Name <span className={generalInfo.red}>*</span></label>
                         <input 
                             type="text" 
-                            name="last-name" 
-                            id="last-name" 
-                            value={this.state.lastName}
+                            name="lastName" 
+                            id="lastName" 
+                            value={this.props.lastName}
                             placeholder = "Enter last name" 
                             spellCheck = "false"
                             autoComplete = "off" 
                             required = "required"
-                            onChange={this.handleLastName} />
+                            onChange={this.props.handleChange} />
                     </div>
                 </div>
                 <div className={`${generalInfo.row} ${generalInfo.flex}`}>
@@ -78,9 +53,9 @@ class GeneralInfo extends Component{
                             placeholder="Enter email" 
                             spellCheck="false" 
                             autoComplete="off" 
-                            value={this.state.email}
+                            value={this.props.email}
                             required="required"
-                            onChange={this.handleEmail}  />
+                            onChange={this.props.handleChange}  />
                     </div>
                     <div className={`${generalInfo['flex-ver']}`}>
                         <label htmlFor="tel" className="phone">Phone <span className={generalInfo.red}>*</span></label>
@@ -91,8 +66,8 @@ class GeneralInfo extends Component{
                             placeholder="Enter phone" 
                             autoComplete="off"
                             required = "required"
-                            value={this.state.telephone}
-                            onChange={this.handlePhone} />
+                            value={this.props.phone}
+                            onChange={this.props.handleChange} />
                     </div>
                     
                 </div>   
@@ -104,6 +79,7 @@ class GeneralInfo extends Component{
                     </button>
                     <button className={generalInfo.btn} value="edit">Edit</button>
                 </div>
+                {/* <Cv title={"title"}/> */}
             </form>    
         )            
     }
