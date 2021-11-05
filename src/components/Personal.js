@@ -3,11 +3,30 @@ import generalInfoStyles from"../styles/generalInfo.module.css"
 import personalStyle from "../styles/personal.module.css"
 
 class Personal extends Component{
-
+    constructor(props) {
+        super(props);
+        this.state = { 
+            disabled: false,
+            submitBtnDisable: false
+        }
+    } 
     submitted = (event)=>{
         event.preventDefault();
-        // make Inputs unslectable after submit
-        console.log(this.props.company);
+        if(this.state.submitBtnDisable) return
+        this.setState({
+            // Input disabler
+            disabled: true,
+            // Btn Disabler
+            submitBtnDisable:true
+        })
+    }
+    editForm = (event)=>{
+        event.preventDefault();
+        if(this.state.submitBtnDisable === false) return
+        this.setState({
+            disabled: false,
+            submitBtnDisable: false
+        })
     }
 
 
@@ -23,6 +42,7 @@ class Personal extends Component{
                             id="companyName" 
                             placeholder="Enter company name" 
                             autoComplete="off"
+                            disabled = {(this.state.disabled)? "disabled" : ""}
                             onChange={this.props.handleChange} />
                     </div>
                     <div className={`${generalInfoStyles['flex-ver']}`}>
@@ -33,6 +53,7 @@ class Personal extends Component{
                             id="position" 
                             placeholder="Enter position title" 
                             autoComplete="off"
+                            disabled = {(this.state.disabled)? "disabled" : ""}
                             onChange={this.props.handleChange} />
                     </div>
                 </div>
@@ -47,13 +68,14 @@ class Personal extends Component{
                             cols="20" 
                             rows="5" 
                             placeholder="Enter tasks details here"
+                            disabled = {(this.state.disabled)? "disabled" : ""}
                             onChange={this.props.handleChange} >
                         </textarea>
                     </div>
                 </div>
                 <div className={`${generalInfoStyles['general-submit-btn']}`}>    
                     <button className={generalInfoStyles.btn}  type="submit">Submit</button>
-                    <button className={generalInfoStyles.btn}>Edit</button>
+                    <button className={generalInfoStyles.btn} onClick={this.editForm}>Edit</button>
                 </div>
             </form> 
         )

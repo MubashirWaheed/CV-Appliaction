@@ -12,4 +12,6 @@ How things will work?
     User will have two button one to download the page in pdf form and other button to reset the whole thing. 
      
 Update on how things will actually work
+
+I all I have to do is to data stored in app.js state to cv.js and diaplay it.
     

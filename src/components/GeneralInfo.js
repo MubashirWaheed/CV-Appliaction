@@ -4,16 +4,35 @@ import generalInfo from "../styles/generalInfo.module.css"
 
 
 class GeneralInfo extends Component{
-    
+    constructor(props) {
+        super(props);
+        this.state = { 
+            disabled: false,
+            submitBtnDisable: false
+        }
+    } 
     submitted = (event)=>{
         event.preventDefault();
-        // make Inputs unslectable after submit
-        console.log(this.props.firstName);
+        if(this.state.submitBtnDisable) return
+        this.setState({
+            // Input disabler
+            disabled: true,
+            // Btn Disabler
+            submitBtnDisable:true
+        })
+    }
+    editForm = (event)=>{
+        event.preventDefault();
+        if(this.state.submitBtnDisable === false) return
+        this.setState({
+            disabled: false,
+            submitBtnDisable: false
+        })
     }
 
     render(){
         return( 
-            <form action="#"  typeof="submit" onSubmit={this.submitted}>
+            <form action="#"  typeof="submit" onSubmit={this.submitted} >
                 <div className={generalInfo.row}>
                     <div className={`${generalInfo['flex-ver']}`}>
                         <label htmlFor="name">First Name <span className={generalInfo.red}>*</span></label>
@@ -26,7 +45,7 @@ class GeneralInfo extends Component{
                             spellCheck="false" 
                             autoComplete="off" 
                             required="required"
-                            disabled
+                            disabled = {(this.state.disabled)? "disabled" : ""}
                             onChange={this.props.handleChange} />
                     </div>
                     <div className={`${generalInfo['flex-ver']}`}>
@@ -40,6 +59,7 @@ class GeneralInfo extends Component{
                             spellCheck = "false"
                             autoComplete = "off" 
                             required = "required"
+                            disabled = {(this.state.disabled)? "disabled" : ""}
                             onChange={this.props.handleChange} />
                     </div>
                 </div>
@@ -55,6 +75,7 @@ class GeneralInfo extends Component{
                             autoComplete="off" 
                             value={this.props.email}
                             required="required"
+                            disabled = {(this.state.disabled)? "disabled" : ""}
                             onChange={this.props.handleChange}  />
                     </div>
                     <div className={`${generalInfo['flex-ver']}`}>
@@ -67,9 +88,9 @@ class GeneralInfo extends Component{
                             autoComplete="off"
                             required = "required"
                             value={this.props.phone}
+                            disabled = {(this.state.disabled)? "disabled" : ""}
                             onChange={this.props.handleChange} />
                     </div>
-                    
                 </div>   
                 <div className={`${generalInfo['general-submit-btn']}`}>    
                     <button className={generalInfo.btn} 
@@ -77,13 +98,15 @@ class GeneralInfo extends Component{
                         value="Submit">
                             Submit
                     </button>
-                    <button className={generalInfo.btn} value="edit">Edit</button>
+                    <button className={generalInfo.btn} 
+                        value="edit"
+                        onClick={this.editForm}>
+                            Edit
+                    </button>
                 </div>
-                {/* <Cv title={"title"}/> */}
             </form>    
         )            
     }
-
 }
 
 export default GeneralInfo
