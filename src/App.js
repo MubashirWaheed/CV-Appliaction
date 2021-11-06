@@ -3,7 +3,7 @@ import './App.css';
 import GeneralInfo from './components/GeneralInfo';
 import Education from './components/Education';
 import Personal from './components/Personal';
-// import Cv from "../src/components/Cv"
+import Cv from "../src/components/Cv"
 
 class App extends Component{
   constructor(props){
@@ -18,13 +18,20 @@ class App extends Component{
       yearComplete: "",
       company: "",
       position: "",
-      tasks: ""
+      tasks: "",
+      random:false
     }
 }
   handleChange = (event)=>{
     this.setState({
-        [event.target.name]: event.target.value
+      [event.target.name]: event.target.value
     })
+  }
+
+  showGeneral =()=>{
+    this.setState={
+      random: true,
+    }
   }
 
   render() {
@@ -39,6 +46,8 @@ class App extends Component{
                 firstName={this.state.firstName} 
                 lastName={this.state.lastName}
                 email={this.state.email}
+                // showGeneral={this.state.showGeneral}
+                showGeneral= {this.showGeneral}
                 phone={this.state.phone}/>
               <Education 
                 handleChange={this.handleChange} 
@@ -53,7 +62,10 @@ class App extends Component{
             </div>
           </div>
         {/* Conditional rendering here to show cv if all the forms are filled*/}
-        <h2>Helo</h2>
+        {/* This is rendered Imediatelly  */}
+        
+        {this.state.random? <Cv lastName={this.state.lastName}/>: "False"}
+        {/* <h2>Helo</h2> */}
         </div>
       </div>
     );

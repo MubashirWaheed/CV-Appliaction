@@ -1,7 +1,5 @@
 import React, {Component} from "react"
 import generalInfo from "../styles/generalInfo.module.css"
-// import Cv from "./Cv"
-
 
 class GeneralInfo extends Component{
     constructor(props) {
@@ -10,7 +8,7 @@ class GeneralInfo extends Component{
             disabled: false,
             submitBtnDisable: false
         }
-    } 
+    }
     submitted = (event)=>{
         event.preventDefault();
         if(this.state.submitBtnDisable) return
@@ -29,8 +27,12 @@ class GeneralInfo extends Component{
             submitBtnDisable: false
         })
     }
+    checking =()=>{
+        console.log("checked");
+    }
 
     render(){
+        // const {showGeneral} = this.props
         return( 
             <form action="#"  typeof="submit" onSubmit={this.submitted} >
                 <div className={generalInfo.row}>
@@ -40,7 +42,8 @@ class GeneralInfo extends Component{
                             type="text" 
                             name="firstName" 
                             id="name"
-                            value={this.props.firstName} 
+                            value="Mubashir"
+                            // value={this.props.firstName} 
                             placeholder="Enter first name" 
                             spellCheck="false" 
                             autoComplete="off" 
@@ -73,7 +76,8 @@ class GeneralInfo extends Component{
                             placeholder="Enter email" 
                             spellCheck="false" 
                             autoComplete="off" 
-                            value={this.props.email}
+                            value="m@g.com"
+                            // value={this.props.email}
                             required="required"
                             disabled = {(this.state.disabled)? "disabled" : ""}
                             onChange={this.props.handleChange}  />
@@ -87,7 +91,8 @@ class GeneralInfo extends Component{
                             placeholder="Enter phone" 
                             autoComplete="off"
                             required = "required"
-                            value={this.props.phone}
+                            value="12345"
+                            // value={this.props.phone}
                             disabled = {(this.state.disabled)? "disabled" : ""}
                             onChange={this.props.handleChange} />
                     </div>
@@ -95,7 +100,9 @@ class GeneralInfo extends Component{
                 <div className={`${generalInfo['general-submit-btn']}`}>    
                     <button className={generalInfo.btn} 
                         type="submit" 
-                        value="Submit">
+                        value="Submit"
+                        onClick={this.showGeneral}>
+                        {/* // onClick={this.checking}> */}
                             Submit
                     </button>
                     <button className={generalInfo.btn} 
