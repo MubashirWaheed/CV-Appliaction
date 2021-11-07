@@ -27,12 +27,7 @@ class GeneralInfo extends Component{
             submitBtnDisable: false
         })
     }
-    checking =()=>{
-        console.log("checked");
-    }
-
     render(){
-        // const {showGeneral} = this.props
         return( 
             <form action="#"  typeof="submit" onSubmit={this.submitted} >
                 <div className={generalInfo.row}>
@@ -42,12 +37,12 @@ class GeneralInfo extends Component{
                             type="text" 
                             name="firstName" 
                             id="name"
-                            value="Mubashir"
-                            // value={this.props.firstName} 
+                            // value="Mubashir"
+                            value={this.props.firstName} 
                             placeholder="Enter first name" 
                             spellCheck="false" 
                             autoComplete="off" 
-                            required="required"
+                            // required="required"
                             disabled = {(this.state.disabled)? "disabled" : ""}
                             onChange={this.props.handleChange} />
                     </div>
@@ -57,11 +52,12 @@ class GeneralInfo extends Component{
                             type="text" 
                             name="lastName" 
                             id="lastName" 
+                            // value="Waheed"
                             value={this.props.lastName}
                             placeholder = "Enter last name" 
                             spellCheck = "false"
                             autoComplete = "off" 
-                            required = "required"
+                            // required = "required"
                             disabled = {(this.state.disabled)? "disabled" : ""}
                             onChange={this.props.handleChange} />
                     </div>
@@ -76,9 +72,9 @@ class GeneralInfo extends Component{
                             placeholder="Enter email" 
                             spellCheck="false" 
                             autoComplete="off" 
-                            value="m@g.com"
-                            // value={this.props.email}
-                            required="required"
+                            // value="m@g.com"
+                            value={this.props.email}
+                            // required="required"
                             disabled = {(this.state.disabled)? "disabled" : ""}
                             onChange={this.props.handleChange}  />
                     </div>
@@ -90,9 +86,9 @@ class GeneralInfo extends Component{
                             id="tel" 
                             placeholder="Enter phone" 
                             autoComplete="off"
-                            required = "required"
-                            value="12345"
-                            // value={this.props.phone}
+                            // required = "required"
+                            // value="12345"
+                            value={this.props.phone}
                             disabled = {(this.state.disabled)? "disabled" : ""}
                             onChange={this.props.handleChange} />
                     </div>
@@ -101,8 +97,7 @@ class GeneralInfo extends Component{
                     <button className={generalInfo.btn} 
                         type="submit" 
                         value="Submit"
-                        onClick={this.showGeneral}>
-                        {/* // onClick={this.checking}> */}
+                        onClick={this.props.showGeneral}>
                             Submit
                     </button>
                     <button className={generalInfo.btn} 

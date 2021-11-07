@@ -1,0 +1,7 @@
+.cv {
+  width: 80%;
+}
+.test {
+  display: flex;
+  /* flex-direction: column; */
+}

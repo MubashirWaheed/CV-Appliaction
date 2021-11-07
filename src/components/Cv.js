@@ -1,15 +1,31 @@
 import React ,{Component}from "react";
+// import cv from "../styles/cv.module.css"
+import "../App.css"
 
-class Cv extends Component{
-    // constructor({showGeneral}){
-    //     super(props)
-    // }
+class Cv extends Component{ 
     render(){
+        const {
+            firstName,
+            lastName,
+            email,
+            phone,
+            school,
+            titile,
+            yearComplete,
+            company,
+            position,
+            tasks
+        } = this.props
         return(
+            // className="background-card  test"
+            // className="cv"
             <div>        
-                {/* <h2>{showGeneral}</h2> */}
-                <h2>{this.props.lastName}</h2>
-                <h3>This is h3</h3>
+                <div >
+                {/* <div className={`${check['background-card']}`} > */}
+                    <h2>{firstName} {lastName}</h2>
+                    {/* <h2>{school}</h2> */}
+                    {/* <h2>{company}</h2> */}
+                </div>
             </div>
         )
     }

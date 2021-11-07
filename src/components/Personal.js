@@ -14,9 +14,7 @@ class Personal extends Component{
         event.preventDefault();
         if(this.state.submitBtnDisable) return
         this.setState({
-            // Input disabler
             disabled: true,
-            // Btn Disabler
             submitBtnDisable:true
         })
     }
@@ -28,7 +26,6 @@ class Personal extends Component{
             submitBtnDisable: false
         })
     }
-
 
     render(){
         return(
@@ -42,6 +39,8 @@ class Personal extends Component{
                             id="companyName" 
                             placeholder="Enter company name" 
                             autoComplete="off"
+                            // Value
+                            // value="Meta"
                             disabled = {(this.state.disabled)? "disabled" : ""}
                             onChange={this.props.handleChange} />
                     </div>
@@ -51,6 +50,8 @@ class Personal extends Component{
                             type="text" 
                             name="position" 
                             id="position" 
+                            // Remove value
+                            // value="CEO"
                             placeholder="Enter position title" 
                             autoComplete="off"
                             disabled = {(this.state.disabled)? "disabled" : ""}
@@ -64,6 +65,8 @@ class Personal extends Component{
                             className={personalStyle.tasksDetail} 
                             name="tasks" 
                             maxLength="240" 
+                            // Remove value
+                            // value="random garbage"
                             id="tasks" 
                             cols="20" 
                             rows="5" 
@@ -74,7 +77,11 @@ class Personal extends Component{
                     </div>
                 </div>
                 <div className={`${generalInfoStyles['general-submit-btn']}`}>    
-                    <button className={generalInfoStyles.btn}  type="submit">Submit</button>
+                    <button className={generalInfoStyles.btn}  
+                        type="submit"
+                        onClick={this.props.showPersonal}>
+                            Submit
+                    </button>
                     <button className={generalInfoStyles.btn} onClick={this.editForm}>Edit</button>
                 </div>
             </form> 

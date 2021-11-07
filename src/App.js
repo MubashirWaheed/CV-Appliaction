@@ -19,22 +19,34 @@ class App extends Component{
       company: "",
       position: "",
       tasks: "",
-      random:false
+      generalFlag:false,
+      educationFlag:false,
+      personalFlag:false
     }
 }
   handleChange = (event)=>{
     this.setState({
-      [event.target.name]: event.target.value
+      [event.target.name]: event.target.value.trim()
     })
   }
 
   showGeneral =()=>{
-    this.setState={
-      random: true,
-    }
+    this.setState({
+      generalFlag: true,
+    })
   }
-
+  showEducation =()=>{
+    this.setState({
+      educationFlag:true
+    })
+  }
+  showPersonal =()=>{
+    this.setState({
+      personalFlag:true
+    })
+  }
   render() {
+    // const {lastName} = this.props
     return (
       <div className="App">
         <div className="background">
@@ -46,26 +58,35 @@ class App extends Component{
                 firstName={this.state.firstName} 
                 lastName={this.state.lastName}
                 email={this.state.email}
-                // showGeneral={this.state.showGeneral}
                 showGeneral= {this.showGeneral}
                 phone={this.state.phone}/>
               <Education 
                 handleChange={this.handleChange} 
+                showEducation={this.showEducation}
                 school={this.state.school}
                 title={this.state.title}
                 yearComplete={this.state.yearComplete}/>
               <Personal 
                 handleChange={this.handleChange}
+                showPersonal={this.showPersonal}
                 company={this.state.company}
                 position={this.state.position}
                 tasks={this.state.tasks}/>
             </div>
           </div>
         {/* Conditional rendering here to show cv if all the forms are filled*/}
-        {/* This is rendered Imediatelly  */}
-        
-        {this.state.random? <Cv lastName={this.state.lastName}/>: "False"}
-        {/* <h2>Helo</h2> */}
+        {this.state.generalFlag === true && this.state.educationFlag === true && this.state.personalFlag === true? 
+          <Cv firstName={this.state.firstName}
+            lastName={this.state.lastName}
+            email={this.state.email}
+            school={this.state.school}
+            title={this.state.title}
+            yearComplete={this.state.yearComplete}
+            company={this.state.company}
+            position={this.state.position}
+            tasks={this.state.tasks}
+            />
+          : null}
         </div>
       </div>
     );

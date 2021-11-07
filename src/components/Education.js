@@ -20,7 +20,6 @@ class Education extends Component{
             // Btn Disabler
             submitBtnDisable:true
         })
-        console.log(this.props.school);
     }
     editForm = (event)=>{
         event.preventDefault();
@@ -43,7 +42,9 @@ class Education extends Component{
                             id="school-name" 
                             placeholder="Enter school name"
                             autoComplete= "off"
-                            required ="required"
+                            // Remove value
+                            // value="school"
+                            // required ="required"
                             disabled = {(this.state.disabled)? "disabled" : ""}
                             onChange={this.props.handleChange}/>
                     </div>
@@ -52,8 +53,10 @@ class Education extends Component{
                         <input 
                             type="text" 
                             name="title" 
+                            // Remove value
+                            // value="Cs"
                             placeholder="Enter Degree title" 
-                            required="required"
+                            // required="required"
                             id="title" 
                             disabled = {(this.state.disabled)? "disabled" : ""}
                             onChange={this.props.handleChange}/>
@@ -65,7 +68,9 @@ class Education extends Component{
                         <input 
                             type="date" 
                             name="yearComplete" 
-                            required="required"
+                            // remove value
+                            // value="2001-07-07"
+                            // required="required"
                             id="complteDate" 
                             className={educationStyles.completeDate} 
                             disabled = {(this.state.disabled)? "disabled" : ""}
@@ -73,7 +78,11 @@ class Education extends Component{
                     </div>
                 </div>
                 <div className={`${generalInfo['general-submit-btn']}`}>
-                    <button className={generalInfo.btn}  type="submit">Submit</button>
+                    <button className={generalInfo.btn}  
+                        type="submit"
+                        onClick={this.props.showEducation}>
+                            Submit
+                    </button>
                     <button className={generalInfo.btn} onClick={this.editForm}>Edit</button>
                 </div>
             </form>

@@ -14,4 +14,9 @@ How things will work?
 Update on how things will actually work
 
 I all I have to do is to data stored in app.js state to cv.js and diaplay it.
+
+=>Implement dstructing not working 
+=> pass props as object which than should be destructured
+
+Create Ui to display the cv data
     
